@@ -11,7 +11,8 @@ module.exports = {
       lg: "1024px",
       xl: "1440px",
       xxl: "1600px",
-      xxxl:"1900px"
+      xxxl:"2500px",
+      xxxxl:"3100px"
     },
     extend: {
       backgroundImage: {

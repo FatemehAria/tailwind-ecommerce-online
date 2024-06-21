@@ -51,14 +51,14 @@ const Singleproduct = () => {
                 </div>
 
                 <div className="flex flex-col gap-8">
-                  <h2 className="font-bold text-3xl max-w-xl mx-auto !leading-10">
+                  <h2 className="font-bold text-3xl max-w-xl mx-auto !leading-10 xxxxl:text-5xl xxxxl:max-w-4xl  xxxxl:py-5">
                     {item.title}
                   </h2>
-                  <p className="text-xl !leading-8 max-w-lg mx-auto xxl:text-xl xxl:!leading-10">
+                  <p className="text-xl !leading-8 max-w-lg mx-auto xxl:text-xl xxl:!leading-10 xxxl:text-3xl xxxl:!leading-[3rem] xxxxl:text-5xl xxxxl:max-w-3xl xxxxl:!leading-[4rem]">
                     {item.description}
                   </p>
 
-                  <div className="flex justify-evenly font-bold text-base xxl:text-xl">
+                  <div className="flex justify-evenly font-bold text-base xxl:text-xl xxxxl:text-3xl ">
                     <p className="text-green-800">${item.price}</p>
                     <p className="flex flex-row gap-2 items-center">
                       <FontAwesomeIcon
@@ -89,7 +89,7 @@ const Singleproduct = () => {
                     ) : (
                       <button
                         onClick={() => dispatch(addCart(item))}
-                        className="bg-slate-900 text-white py-2 px-4 rounded-md xxl:text-lg"
+                        className="bg-slate-900 text-white py-2 px-4 rounded-md xxl:text-lg xxxxl:text-4xl"
                       >
                         Add to cart
                       </button>
