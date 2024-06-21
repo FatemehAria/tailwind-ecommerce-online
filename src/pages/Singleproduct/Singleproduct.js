@@ -46,8 +46,8 @@ const Singleproduct = () => {
               key={item.id}
               className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full"
             >
-              <div className="grid grid-cols-2 items-center justify-center w-[90%] mx-auto shadow-2xl p-[3%]">
-                <div className="bg-yellow-100 w-[50%]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-center w-[90%] mx-auto shadow-2xl p-[3%]">
+                <div className="bg-yellow-100 w-[50%] mx-auto">
                   <img src={item.image} alt={item.title} />
                 </div>
 

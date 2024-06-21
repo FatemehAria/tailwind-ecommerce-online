@@ -11,13 +11,11 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const state = useSelector((state) => state.cartItems);
 
-
   useEffect(() => {
     window.onscroll = () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     };
   }, []);
-
 
   return (
     <div
@@ -25,13 +23,13 @@ const Header = () => {
         isActive
           ? "bg-slate-50 shadow-md py-2 transition-all duration-300"
           : "bg-none py-3 transition-all duration-300"
-      } w-full z-10 fixed top-0`}
+      } w-full z-10 fixed top-0 left-0`}
     >
-      <div className="flex flex-row justify-between items-center w-full px-[8%]">
+      <div className="flex flex-row justify-between px-[15%] items-center w-full">
         <Link to="/">
           <img className="text-xs w-10 h-10" src={Logo} alt="logo" />
         </Link>
-        <div>
+        <div className="relative">
           <FontAwesomeIcon
             icon={faCartShopping}
             onClick={() => setIsOpen(!isOpen)}

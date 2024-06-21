@@ -6,6 +6,7 @@ import Loading from "../../components/Loading/Loading";
 import ErrorMessage from "../../components/Error/ErrorMessage";
 import { MotionVariants } from "../../utils/util";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { proLoading, proData, proError } = useSelector(
@@ -17,9 +18,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div
-      className="pt-[5%] px-5 mb-8"
-    >
+    <div className="pt-[5%] px-5 mb-8">
       {proLoading ? (
         <div className="absolute -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2">
           <Loading />
@@ -44,7 +43,9 @@ const Products = () => {
                 viewport={{ amount: 0 }}
                 key={item.id}
               >
-                <ProductCard item={item} />
+                <Link to={`/${item.id}`}>
+                  <ProductCard item={item} />
+                </Link>
               </motion.div>
             );
           })}
