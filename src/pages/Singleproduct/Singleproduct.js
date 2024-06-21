@@ -14,7 +14,6 @@ const Singleproduct = () => {
   const state = useSelector((state) => state.cartItems);
   console.log(state);
   const dispatch = useDispatch();
-  const [itemAdditionCheck, setItemAdditionCheck] = useState(false);
 
   const getSingleProducts = async () => {
     try {
@@ -44,10 +43,10 @@ const Singleproduct = () => {
           return (
             <div
               key={item.id}
-              className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full"
+              className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[90%] xxl:w-[60%]"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-center w-[90%] mx-auto shadow-2xl p-[3%]">
-                <div className="bg-yellow-100 w-[50%] mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0 items-center justify-center mx-auto shadow-2xl p-[3%]">
+                <div className="w-[50%] mx-auto">
                   <img src={item.image} alt={item.title} />
                 </div>
 
@@ -55,11 +54,11 @@ const Singleproduct = () => {
                   <h2 className="font-bold text-3xl max-w-xl mx-auto !leading-10">
                     {item.title}
                   </h2>
-                  <p className="text-xl !leading-8 max-w-lg mx-auto">
+                  <p className="text-xl !leading-8 max-w-lg mx-auto xxl:text-xl xxl:!leading-10">
                     {item.description}
                   </p>
 
-                  <div className="flex justify-evenly font-bold text-base">
+                  <div className="flex justify-evenly font-bold text-base xxl:text-xl">
                     <p className="text-green-800">${item.price}</p>
                     <p className="flex flex-row gap-2 items-center">
                       <FontAwesomeIcon
@@ -90,7 +89,7 @@ const Singleproduct = () => {
                     ) : (
                       <button
                         onClick={() => dispatch(addCart(item))}
-                        className="bg-slate-900 text-white py-2 px-4 rounded-md"
+                        className="bg-slate-900 text-white py-2 px-4 rounded-md xxl:text-lg"
                       >
                         Add to cart
                       </button>

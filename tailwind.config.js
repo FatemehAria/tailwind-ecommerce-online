@@ -2,14 +2,16 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontFamily:{
-      'myFont':'Poppins',
+    fontFamily: {
+      myFont: "Poppins",
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1440px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1440px",
+      xxl: "1600px",
+      xxxl:"1900px"
     },
     extend: {
       backgroundImage: {
