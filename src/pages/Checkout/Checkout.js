@@ -10,7 +10,12 @@ function Checkout() {
   const [sum, setSum] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
+  const handleSubmission = () => {
+    toast.success("Sumission Successfull!");
+    dispatch(emptyCart());
+    navigate("/");
+  };
   useEffect(() => {
     let total = cartItems.reduce((acc, current) => {
       return acc + current.price * current.qty;
@@ -31,10 +36,7 @@ function Checkout() {
           <div className="flex justify-center items-center">
             <button
               className="bg-green-700 text-white font-semibold text-lg px-4 py-2 rounded-lg"
-              onClick={() => (
-                toast.success("Sumission Successfull!"),
-                dispatch(emptyCart(), navigate("/"))
-              )}
+              onClick={() => handleSubmission()}
             >
               Confirm
             </button>

@@ -1,7 +1,7 @@
-import { faCartShopping, faShirt } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import { useSelector } from "react-redux";
 import Logo from "../../img/logo.svg";

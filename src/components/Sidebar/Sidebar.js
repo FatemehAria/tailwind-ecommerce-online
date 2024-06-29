@@ -17,6 +17,10 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleNavigation = (item) => {
+    navigate(`/products/${item.id}`);
+    setIsOpen(false);
+  };
   useEffect(() => {
     let total = state.reduce((acc, current) => {
       return acc + current.price * current.qty;
@@ -27,7 +31,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
     <div
       className={`fixed shadow-2xl z-20 px-4 lg:px-[35px] w-full bg-white top-0 h-full md:w-[35vw] xl:max-w-[30vw] overflow-y-scroll ${
-        isOpen ? "left-0 transition-all duration-700" : "-left-full transition-all duration-700"
+        isOpen
+          ? "left-0 transition-all duration-700"
+          : "-left-full transition-all duration-700"
       }`}
     >
       <div className="flex justify-between py-2 border-b">
@@ -62,9 +68,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             <div>
               <p
                 className="font-medium text-base hover:underline cursor-pointer max-w-[15rem] mx-auto !leading-6 uppercase"
-                onClick={() => (
-                  navigate(`/products/${item.id}`), setIsOpen(false)
-                )}
+                onClick={() => handleNavigation(item)}
               >
                 {item.title}
               </p>
@@ -79,7 +83,10 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
                 <p className="text-gray-500">${item.price}</p>
                 <div>
                   <span onMouseDown={() => dispatch(removeCart(item))}>
-                    <FontAwesomeIcon icon={faMinus} className="mx-2 cursor-pointer" />
+                    <FontAwesomeIcon
+                      icon={faMinus}
+                      className="mx-2 cursor-pointer"
+                    />
                   </span>
                   {item.qty}
                   <span>
