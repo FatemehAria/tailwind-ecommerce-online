@@ -9,18 +9,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, clearCartItem, emptyCart, removeCart } from "../../action";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const state = useSelector((state) => state.cartItems);
   const [sum, setSum] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavigation = (item) => {
     navigate(`/products/${item.id}`);
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location]);
+
   useEffect(() => {
     let total = state.reduce((acc, current) => {
       return acc + current.price * current.qty;
